@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimoni Pelanggan - Premium Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0F172A',
+                            card: '#1E293B',
+                            blue: '#3B82F6',
+                            purple: '#8B5CF6',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+
+<body class="bg-brand-dark text-gray-200 antialiased selection:bg-brand-blue selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass border-b border-gray-800/50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <div
+                    class="w-8 h-8 bg-gradient-to-br from-brand-blue to-brand-purple rounded-lg flex items-center justify-center font-bold text-white">
+                    P</div>
+                <span class="font-bold text-xl tracking-tight text-white">Premium<span
+                        class="text-brand-blue">Store</span></span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+                <a href="index.html" class="hover:text-white transition">Home</a>
+                <a href="index.html#products" class="hover:text-white transition">Products</a>
+                <a href="index.html#faq" class="hover:text-white transition">FAQ</a>
+                <a href="index.html#contact" class="hover:text-white transition">Support</a>
+            </div>
+            <a href="index.html#products"
+                class="bg-white/10 hover:bg-white/20 text-white px-5 py-2 rounded-full text-sm font-semibold transition border border-white/10">
+                Beli Sekarang
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="pt-40 pb-12 px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Testimoni Pelanggan</h1>
+        <p class="text-gray-400 max-w-2xl mx-auto mb-8">Apa kata mereka yang sudah berlangganan aplikasi premium di
+            sini.</p>
+
+        <!-- Average Rating Widget -->
+        <div
+            class="inline-flex items-center gap-4 bg-brand-card border border-gray-700 rounded-full px-6 py-3 shadow-lg">
+            <div class="flex items-center gap-1 text-yellow-400">
+                <span class="text-2xl font-bold text-white mr-2" id="avg-rating-value">0.0</span>
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                    <path
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                </svg>
+            </div>
+            <div class="h-8 w-px bg-gray-700"></div>
+            <span class="text-sm text-gray-400" id="total-reviews">Memuat ulasan...</span>
+        </div>
+    </section>
+
+    <!-- Testimonials Grid -->
+    <section class="container mx-auto px-6 mb-24">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Review 1 -->
+            <div
+                class="bg-brand-card p-8 rounded-2xl border border-gray-800 relative hover:border-brand-blue/50 transition duration-300">
+                <div class="text-yellow-400 flex gap-1 mb-4">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                </div>
+                <p class="text-gray-300 mb-6 italic">"Pelayanan sangat cepat! Baru bayar langsung dikirim akunnya.
+                    Recommended banget buat yang butuh Canva Pro murah."</p>
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold shadow-lg">
+                        L</div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm">Lalu Rio Sudarsoni</h4>
+                        <p class="text-gray-500 text-xs">Membeli Canva Pro</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div
+                class="bg-brand-card p-8 rounded-2xl border border-gray-800 relative hover:border-green-500/50 transition duration-300">
+                <div class="text-yellow-400 flex gap-1 mb-4">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                </div>
+                <p class="text-gray-300 mb-6 italic">"Awalnya ragu karena murah banget, ternyata beneran premium dan
+                    full garansi. Adminnya juga ramah pas ditanya-tanya."</p>
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-10 h-10 rounded-full bg-gradient-to-r from-green-400 to-green-600 flex items-center justify-center text-white font-bold shadow-lg">
+                        A</div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm">Aji</h4>
+                        <p class="text-gray-500 text-xs">Membeli Spotify Premium</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div
+                class="bg-brand-card p-8 rounded-2xl border border-gray-800 relative hover:border-purple-500/50 transition duration-300">
+                <div class="text-yellow-400 flex gap-1 mb-4">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                </div>
+                <p class="text-gray-300 mb-6 italic">"Buat ngerjain tugas kuliah jadi gampang banget pake ChatGPT Plus
+                    dari sini. Harganya pas di kantong mahasiswa."</p>
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-400 to-purple-600 flex items-center justify-center text-white font-bold shadow-lg">
+                        N</div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm">Nurul</h4>
+                        <p class="text-gray-500 text-xs">Membeli ChatGPT Plus</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 4 -->
+            <div
+                class="bg-brand-card p-8 rounded-2xl border border-gray-800 relative hover:border-cyan-500/50 transition duration-300">
+                <div class="text-yellow-400 flex gap-1 mb-4">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                </div>
+                <p class="text-gray-300 mb-6 italic">"CapCut Pro-nya work 100%, fitur premium kebuka semua. Edit video
+                    jadi makin kece tanpa watermark."</p>
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-10 h-10 rounded-full bg-gradient-to-r from-cyan-400 to-cyan-600 flex items-center justify-center text-white font-bold shadow-lg">
+                        D</div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm">Dimas Anggara</h4>
+                        <p class="text-gray-500 text-xs">Membeli CapCut Pro</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 5 -->
+            <div
+                class="bg-brand-card p-8 rounded-2xl border border-gray-800 relative hover:border-blue-500/50 transition duration-300">
+                <div class="text-yellow-400 flex gap-1 mb-4">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                </div>
+                <p class="text-gray-300 mb-6 italic">"Zoom Pro murah banget disini, meeting lancar jaya tanpa
+                    putus-putus. Thanks min!"</p>
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-blue-700 flex items-center justify-center text-white font-bold shadow-lg">
+                        S</div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm">Siti Aminah</h4>
+                        <p class="text-gray-500 text-xs">Membeli Zoom Pro</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 6 -->
+            <div
+                class="bg-brand-card p-8 rounded-2xl border border-gray-800 relative hover:border-indigo-500/50 transition duration-300">
+                <div class="text-yellow-400 flex gap-1 mb-4">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                </div>
+                <p class="text-gray-300 mb-6 italic">"Scite AI sangat membantu skripsi saya. Harga mahasiswa banget,
+                    proses cepat."</p>
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-10 h-10 rounded-full bg-gradient-to-r from-indigo-500 to-indigo-700 flex items-center justify-center text-white font-bold shadow-lg">
+                        R</div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm">Rizky Pratama</h4>
+                        <p class="text-gray-500 text-xs">Membeli Scite AI</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Live Transaction Feed (Widget) -->
+    <div id="live-notification" class="fixed bottom-24 left-6 z-40 hidden lg:flex flex-col gap-3 pointer-events-none transition-opacity duration-500 opacity-0">
+        <div
+            class="bg-brand-card/90 backdrop-blur border border-gray-700 p-3 rounded-lg shadow-xl flex items-center gap-3">
+            <div class="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center text-green-400 text-xs">✓
+            </div>
+            <div>
+                <p id="notif-text" class="text-xs text-white font-bold">Seseorang baru saja membeli Canva Pro</p>
+                <p class="text-[10px] text-gray-400">Baru saja</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 py-12 bg-[#0b1120]">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-gray-500 text-sm">
+                &copy; 2024 PremiumStore. All rights reserved.
+            </div>
+            <div class="flex gap-4">
+                <div class="h-8 bg-white/10 rounded px-2 flex items-center text-xs text-gray-400">QRIS</div>
+                <div class="h-8 bg-white/10 rounded px-2 flex items-center text-xs text-gray-400">BCA</div>
+                <div class="h-8 bg-white/10 rounded px-2 flex items-center text-xs text-gray-400">E-Wallet</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script Menghitung Rating Rata-Rata Otomatis
+        document.addEventListener("DOMContentLoaded", function () {
+            const reviews = document.querySelectorAll('.bg-brand-card.relative'); // Selector kartu testimoni
+            let totalStars = 0;
+            let reviewCount = 0;
+
+            reviews.forEach(card => {
+                // Hitung jumlah bintang (SVG) di dalam setiap kartu
+                const stars = card.querySelectorAll('.text-yellow-400 svg').length;
+                if (stars > 0) {
+                    totalStars += stars;
+                    reviewCount++;
+                }
+            });
+
+            if (reviewCount > 0) {
+                const average = (totalStars / reviewCount).toFixed(1); // 1 desimal (misal 4.9)
+
+                // Update Tampilan
+                document.getElementById('avg-rating-value').innerText = average + "/5";
+                document.getElementById('total-reviews').innerText = `Berdasarkan ${reviewCount} ulasan pelanggan`;
+            }
+        });
+
+        // --- LIVE TRANSACTION FEED (Notifikasi Pembelian Otomatis) ---
+        const transactions = [
+            { name: "Budi", product: "Spotify Premium" },
+            { name: "Siti", product: "Zoom Pro" },
+            { name: "Andi", product: "Canva Pro" },
+            { name: "Dewi", product: "ChatGPT Plus" },
+            { name: "Rizky", product: "CapCut Pro" },
+            { name: "Nurul", product: "Scite AI" },
+            { name: "Eko", product: "Netflix Premium" },
+            { name: "Fajar", product: "Youtube Premium" }
+        ];
+
+        function showNotification() {
+            const notif = document.getElementById('live-notification');
+            const notifText = document.getElementById('notif-text');
+            
+            if (!notif || !notifText) return;
+
+            // Pilih data acak
+            const randomData = transactions[Math.floor(Math.random() * transactions.length)];
+            
+            // Update teks
+            notifText.innerText = `${randomData.name} membeli ${randomData.product}`;
+
+            // Tampilkan (Fade In)
+            notif.classList.remove('opacity-0');
+            notif.classList.add('opacity-100');
+
+            // Sembunyikan setelah 4 detik (Fade Out)
+            setTimeout(() => {
+                notif.classList.remove('opacity-100');
+                notif.classList.add('opacity-0');
+            }, 4000);
+        }
+
+        // Jalankan loop notifikasi
+        setTimeout(() => {
+            showNotification();
+            setInterval(showNotification, 7000);
+        }, 2000);
+    </script>
+</body>
+
+</html>

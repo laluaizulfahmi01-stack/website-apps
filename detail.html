@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Produk</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#0f172a] text-gray-200">
+
+    <nav class="bg-[#1e293b] border-b border-gray-700 py-4 shadow-xl">
+        <div class="container mx-auto px-6">
+            <a href="index.html#products" class="flex items-center text-gray-400 hover:text-white transition gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Kembali ke Katalog
+            </a>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-6 pt-12 pb-24">
+        <div
+            class="bg-[#1e293b] rounded-2xl shadow-2xl border border-gray-700 overflow-hidden flex flex-col md:flex-row">
+
+            <div class="w-full md:w-1/2 bg-black/20 flex items-center justify-center p-12 relative">
+                <span
+                    class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">Full
+                    Garansi</span>
+                <img id="d-img" src="" class="max-w-[200px] md:max-w-[300px] object-contain drop-shadow-2xl"
+                    alt="Produk" onerror="this.src='https://placehold.co/300x300?text=No+Image'">
+            </div>
+
+            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+                <span class="text-blue-400 font-bold text-sm uppercase mb-2">Premium Apps</span>
+                <h1 id="d-judul" class="text-3xl md:text-4xl font-extrabold text-white mb-4">Loading...</h1>
+
+                <div class="flex items-end mb-6">
+                    <span id="d-harga" class="text-3xl font-bold text-green-400">Rp 0</span>
+                    <span id="d-durasi" class="text-gray-500 text-sm ml-2 mb-1"></span>
+                </div>
+
+                <p id="d-desk"
+                    class="text-gray-400 leading-relaxed mb-8 border-l-4 border-blue-500 pl-4 bg-[#0f172a]/50 py-3 rounded-r-lg">
+                    Memuat deskripsi...
+                </p>
+
+                <div class="mb-8 bg-[#0f172a] p-4 rounded-xl border border-gray-700">
+                    <h3 class="text-white font-bold mb-3 text-sm">Keuntungan Beli Disini:</h3>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Akun Privat / Sharing
+                            (Aman)</li>
+                        <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Garansi Full Selama
+                            Durasi</li>
+                        <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Legal & Anti Back</li>
+                    </ul>
+                </div>
+
+                <a id="btn-beli" href="#"
+                    class="w-full bg-green-600 hover:bg-green-500 text-white text-center font-bold py-4 rounded-xl shadow-lg transition flex justify-center items-center gap-2 transform hover:scale-[1.02]">
+                    BELI SEKARANG
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // DATABASE DATA PRODUK (Sesuai Screenshot Anda)
+        const database = {
+            'canva': { judul: "CANVA PRO", harga: "Rp 5.000", durasi: "/ Bulan", desk: "Akses 100+ juta konten premium, Brand Kit, Hapus Background, Magic Resize.", img: "https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg" },
+            'spotify': { judul: "SPOTIFY PREMIUM", harga: "Rp 25.000", durasi: "/ Bulan", desk: "Musik tanpa iklan, download offline, skip unlimited, kualitas audio tinggi.", img: "https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg" },
+            'capcut': { judul: "CAPCUT PRO", harga: "Rp 15.000", durasi: "/ Bulan", desk: "Edit video tanpa watermark, akses efek premium, dan fitur AI canggih.", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Capcut_logo.svg/1200px-Capcut_logo.svg.png" },
+            'chatgpt': { judul: "CHATGPT PLUS", harga: "Rp 45.000", durasi: "/ Bulan", desk: "Akses GPT-4, browsing internet, analisis data canggih, dan respon lebih cepat.", img: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" },
+            'zoom': { judul: "ZOOM PRO", harga: "Rp 10.000", durasi: "/ 2 Minggu", desk: "Meeting unlimited 30 jam, 100 peserta, record cloud 5GB.", img: "https://upload.wikimedia.org/wikipedia/commons/2/24/Zoom_icon.svg" },
+            'scite': { judul: "SCITE AI", harga: "Rp 5.000", durasi: "/ Minggu", desk: "Platform AI untuk penelitian akademik, cek sitasi jurnal, asisten riset.", img: "https://placehold.co/500x500/0000FF/ffffff?text=Scite+AI" }
+        };
+
+        // Ambil ID dari URL (misal: detail.html?id=canva)
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id');
+
+        if (id && database[id]) {
+            // Isi Data ke Layar
+            const data = database[id];
+            document.getElementById('d-judul').innerText = data.judul;
+            document.getElementById('d-harga').innerText = data.harga;
+            document.getElementById('d-durasi').innerText = data.durasi;
+            document.getElementById('d-desk').innerText = data.desk;
+
+            // Ganti Gambar (Jika bukan placeholder)
+            if (!data.img.includes('placehold')) {
+                document.getElementById('d-img').src = data.img;
+            }
+
+            // Update Link Tombol Beli agar membawa nama barang ke Checkout
+            document.getElementById('btn-beli').href = `checkout.html?barang=${encodeURIComponent(data.judul)}`;
+        } else {
+            document.getElementById('d-judul').innerText = "Produk Tidak Ditemukan";
+        }
+    </script>
+</body>
+
+</html>

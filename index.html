@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Apps Store - Unlock Access for Less</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0F172A',
+                            card: '#1E293B',
+                            blue: '#3B82F6',
+                            purple: '#8B5CF6',
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #60A5FA, #A78BFA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .animated-bg {
+            background: linear-gradient(-45deg, #0f172a, #1e293b, #172554, #312e81);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            background-attachment: fixed;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .snowflake {
+            position: fixed;
+            top: -2rem;
+            color: white;
+            pointer-events: none;
+            z-index: 9999;
+            animation: fall linear forwards;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(110vh) translateX(20px) rotate(360deg);
+            }
+        }
+
+        /* Animasi Kartu Muncul (Staggered) */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card-animate {
+            opacity: 0;
+            /* Awalnya tersembunyi */
+            animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+    </style>
+</head>
+
+<body class="bg-brand-dark text-gray-200 antialiased selection:bg-brand-blue selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass border-b border-gray-800/50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div
+                    class="w-8 h-8 bg-gradient-to-br from-brand-blue to-brand-purple rounded-lg flex items-center justify-center font-bold text-white">
+                    P</div>
+                <span class="font-bold text-xl tracking-tight text-white">Premium<span
+                        class="text-brand-blue">Store</span></span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+                <a href="#" class="hover:text-white transition">Home</a>
+                <a href="#products" class="hover:text-white transition">Products</a>
+                <a href="#faq" class="hover:text-white transition">FAQ</a>
+                <a href="#contact" class="hover:text-white transition">Support</a>
+            </div>
+            <a href="#products"
+                class="bg-white/10 hover:bg-white/20 text-white px-5 py-2 rounded-full text-sm font-semibold transition border border-white/10">
+                Get Started
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-40 pb-24 px-6 overflow-hidden animated-bg">
+        <!-- Background Elements -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10">
+            <div
+                class="absolute top-20 left-1/4 w-96 h-96 bg-brand-blue/20 rounded-full blur-[120px] animate-pulse-slow">
+            </div>
+            <div class="absolute bottom-20 right-1/4 w-96 h-96 bg-brand-purple/20 rounded-full blur-[120px] animate-pulse-slow"
+                style="animation-delay: 1.5s;"></div>
+        </div>
+
+        <div class="container mx-auto text-center max-w-4xl relative z-10">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-blue/10 border border-brand-blue/20 text-brand-blue text-xs font-bold uppercase tracking-wider mb-6">
+                <span class="w-2 h-2 rounded-full bg-brand-blue animate-pulse"></span>
+                New Offers Available
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-8 leading-tight tracking-tight">
+                Unlock <span class="gradient-text">Premium Access</span><br> for Less
+            </h1>
+
+            <p class="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+                Reliability, Speed, and Support. Get your favorite premium subscriptions at competitive rates with
+                instant delivery and full warranty.
+            </p>
+
+            <!-- Search Bar -->
+            <div class="max-w-xl mx-auto relative mb-10 group">
+                <div
+                    class="absolute -inset-1 bg-gradient-to-r from-brand-blue to-brand-purple rounded-full opacity-25 group-hover:opacity-50 blur transition duration-200">
+                </div>
+                <div
+                    class="relative flex items-center bg-brand-card rounded-full border border-gray-700 shadow-2xl overflow-hidden">
+                    <svg class="w-6 h-6 text-gray-500 ml-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <input type="text" id="searchInput" placeholder="Search apps (e.g. Spotify, Canva, ChatGPT)..."
+                        class="w-full py-4 px-4 bg-transparent text-white placeholder-gray-500 focus:outline-none">
+                    <button
+                        class="bg-brand-blue hover:bg-blue-600 text-white px-8 py-4 font-bold transition">Search</button>
+                </div>
+            </div>
+
+            <!-- Trustpilot Mockup -->
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 text-sm text-gray-400">
+                <div class="flex items-center gap-1">
+                    <div class="flex text-green-500">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                    </div>
+                    <span class="font-bold text-white">4.9/5</span> Rating
+                </div>
+                <span class="hidden md:inline text-gray-600">•</span>
+                <span>Trusted by 10,000+ Customers</span>
+            </div>
+        </div>
+
+        <!-- Bottom Shadow Transition -->
+        <div
+            class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-brand-dark to-transparent pointer-events-none">
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="container mx-auto px-6 mb-24">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <div class="glass p-6 rounded-2xl flex items-center gap-4 hover:bg-white/5 transition cursor-pointer group">
+                <div
+                    class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-400 group-hover:scale-110 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z">
+                        </path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white">Entertainment</h3>
+                    <p class="text-xs text-gray-400">Spotify, Netflix, Disney+</p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="glass p-6 rounded-2xl flex items-center gap-4 hover:bg-white/5 transition cursor-pointer group">
+                <div
+                    class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+                        </path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white">Productivity</h3>
+                    <p class="text-xs text-gray-400">Canva, Office 365, Zoom</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="glass p-6 rounded-2xl flex items-center gap-4 hover:bg-white/5 transition cursor-pointer group">
+                <div
+                    class="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center text-green-400 group-hover:scale-110 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                        </path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white">AI Tools</h3>
+                    <p class="text-xs text-gray-400">ChatGPT, Midjourney, Jasper</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Grid -->
+    <section id="products" class="container mx-auto px-6 mb-24">
+        <div class="flex items-center justify-between mb-10">
+            <h2 class="text-3xl font-bold text-white">Trending Products</h2>
+            <a href="#" class="text-brand-blue hover:text-white transition text-sm font-semibold">View All &rarr;</a>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap justify-center gap-3 mb-8">
+            <button onclick="filterCategory('all', this)"
+                class="filter-btn px-5 py-2 rounded-full border border-brand-blue bg-brand-blue text-white text-sm font-semibold transition shadow-[0_0_15px_rgba(59,130,246,0.5)]">All</button>
+            <button onclick="filterCategory('entertainment', this)"
+                class="filter-btn px-5 py-2 rounded-full border border-gray-700 text-gray-400 text-sm font-semibold transition hover:border-brand-blue hover:text-white hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]">Entertainment</button>
+            <button onclick="filterCategory('productivity', this)"
+                class="filter-btn px-5 py-2 rounded-full border border-gray-700 text-gray-400 text-sm font-semibold transition hover:border-brand-blue hover:text-white hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]">Productivity</button>
+            <button onclick="filterCategory('ai', this)"
+                class="filter-btn px-5 py-2 rounded-full border border-gray-700 text-gray-400 text-sm font-semibold transition hover:border-brand-blue hover:text-white hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]">AI
+                Tools</button>
+        </div>
+
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+            <!-- Product Card Component (Tailwind) -->
+            <div data-category="productivity"
+                class="relative group bg-brand-card rounded-2xl p-[1px] overflow-hidden hover:shadow-2xl hover:shadow-brand-blue/20 transition-all duration-300">
+                <!-- Gradient Border Effect -->
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-brand-blue to-brand-purple opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+
+                <div
+                    class="relative bg-brand-dark rounded-2xl p-6 h-full flex flex-col border border-gray-800 group-hover:border-transparent transition-colors">
+                    <div
+                        class="absolute top-4 right-4 bg-green-500/10 text-green-400 text-[10px] font-bold px-2 py-1 rounded border border-green-500/20">
+                        FAST DELIVERY</div>
+
+                    <div
+                        class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-white p-2 flex items-center justify-center shadow-lg">
+                        <!-- TIPS: Ganti src di bawah ini menjadi "images/nama-file.png" jika ingin pakai file lokal -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg"
+                            class="w-full h-full object-contain" alt="Canva">
+                    </div>
+
+                    <h3 class="text-xl font-bold text-center text-white mb-1">Canva Pro</h3>
+                    <p class="text-center text-gray-500 text-xs mb-6">Design anything, anywhere.</p>
+
+                    <div class="flex items-center justify-center gap-3 mb-6">
+                        <span class="text-gray-600 line-through text-sm">Rp 55.000</span>
+                        <span class="text-green-400 font-bold text-2xl">Rp 5.000</span>
+                    </div>
+
+                    <a href="detail.html?id=canva"
+                        class="mt-auto w-full bg-brand-blue hover:bg-blue-600 text-white font-bold py-3 rounded-xl transition-all flex justify-center items-center gap-2 group-hover:scale-[1.02] shadow-lg shadow-brand-blue/25">
+                        <span class="group-hover:animate-pulse">BUY NOW</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div data-category="entertainment"
+                class="relative group bg-brand-card rounded-2xl p-[1px] overflow-hidden hover:shadow-2xl hover:shadow-green-500/20 transition-all duration-300">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div
+                    class="relative bg-brand-dark rounded-2xl p-6 h-full flex flex-col border border-gray-800 group-hover:border-transparent transition-colors">
+                    <div
+                        class="absolute top-4 right-4 bg-green-500/10 text-green-400 text-[10px] font-bold px-2 py-1 rounded border border-green-500/20">
+                        FAST DELIVERY</div>
+                    <div
+                        class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-[#1DB954] p-2 flex items-center justify-center shadow-lg">
+                        <!-- Contoh: src="images/spotify-logo.png" -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg"
+                            class="w-full h-full object-contain" alt="Spotify">
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-white mb-1">Spotify Premium</h3>
+                    <p class="text-center text-gray-500 text-xs mb-6">Ad-free music listening.</p>
+                    <div class="flex items-center justify-center gap-3 mb-6">
+                        <span class="text-gray-600 line-through text-sm">Rp 50.000</span>
+                        <span class="text-green-400 font-bold text-2xl">Rp 25.000</span>
+                    </div>
+                    <a href="detail.html?id=spotify"
+                        class="mt-auto w-full bg-green-600 hover:bg-green-500 text-white font-bold py-3 rounded-xl transition-all flex justify-center items-center gap-2 group-hover:scale-[1.02] shadow-lg shadow-green-600/25">
+                        <span class="group-hover:animate-pulse">BUY NOW</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div data-category="ai"
+                class="relative group bg-brand-card rounded-2xl p-[1px] overflow-hidden hover:shadow-2xl hover:shadow-brand-purple/20 transition-all duration-300">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-brand-purple to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div
+                    class="relative bg-brand-dark rounded-2xl p-6 h-full flex flex-col border border-gray-800 group-hover:border-transparent transition-colors">
+                    <div
+                        class="absolute top-4 right-4 bg-green-500/10 text-green-400 text-[10px] font-bold px-2 py-1 rounded border border-green-500/20">
+                        FAST DELIVERY</div>
+                    <div
+                        class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-white p-2 flex items-center justify-center shadow-lg">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"
+                            class="w-full h-full object-contain" alt="ChatGPT">
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-white mb-1">ChatGPT Plus</h3>
+                    <p class="text-center text-gray-500 text-xs mb-6">Unlock GPT-4 power.</p>
+                    <div class="flex items-center justify-center gap-3 mb-6">
+                        <span class="text-gray-600 line-through text-sm">Rp 300.000</span>
+                        <span class="text-green-400 font-bold text-2xl">Rp 45.000</span>
+                    </div>
+                    <a href="detail.html?id=chatgpt"
+                        class="mt-auto w-full bg-brand-purple hover:bg-purple-600 text-white font-bold py-3 rounded-xl transition-all flex justify-center items-center gap-2 group-hover:scale-[1.02] shadow-lg shadow-brand-purple/25">
+                        <span class="group-hover:animate-pulse">BUY NOW</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product Card 4 (CapCut) -->
+            <div data-category="productivity"
+                class="relative group bg-brand-card rounded-2xl p-[1px] overflow-hidden hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div
+                    class="relative bg-brand-dark rounded-2xl p-6 h-full flex flex-col border border-gray-800 group-hover:border-transparent transition-colors">
+                    <div
+                        class="absolute top-4 right-4 bg-green-500/10 text-green-400 text-[10px] font-bold px-2 py-1 rounded border border-green-500/20">
+                        FAST DELIVERY</div>
+                    <div
+                        class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-white p-2 flex items-center justify-center shadow-lg">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Capcut_logo.svg/1200px-Capcut_logo.svg.png"
+                            class="w-full h-full object-contain" alt="CapCut"
+                            onerror="this.src='https://placehold.co/200x200?text=CapCut'">
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-white mb-1">CapCut Pro</h3>
+                    <p class="text-center text-gray-500 text-xs mb-6">Video editing made easy.</p>
+                    <div class="flex items-center justify-center gap-3 mb-6">
+                        <span class="text-gray-600 line-through text-sm">Rp 90.000</span>
+                        <span class="text-green-400 font-bold text-2xl">Rp 15.000</span>
+                    </div>
+                    <a href="detail.html?id=capcut"
+                        class="mt-auto w-full bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-3 rounded-xl transition-all flex justify-center items-center gap-2 group-hover:scale-[1.02] shadow-lg shadow-cyan-600/25">
+                        <span class="group-hover:animate-pulse">BUY NOW</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product Card 5 (Zoom) -->
+            <div data-category="productivity"
+                class="relative group bg-brand-card rounded-2xl p-[1px] overflow-hidden hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div
+                    class="relative bg-brand-dark rounded-2xl p-6 h-full flex flex-col border border-gray-800 group-hover:border-transparent transition-colors">
+                    <div
+                        class="absolute top-4 right-4 bg-green-500/10 text-green-400 text-[10px] font-bold px-2 py-1 rounded border border-green-500/20">
+                        FAST DELIVERY</div>
+                    <div
+                        class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-white p-2 flex items-center justify-center shadow-lg">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Zoom_icon.svg"
+                            class="w-full h-full object-contain" alt="Zoom">
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-white mb-1">Zoom Pro</h3>
+                    <p class="text-center text-gray-500 text-xs mb-6">Unlimited meetings & recording.</p>
+                    <div class="flex items-center justify-center gap-3 mb-6">
+                        <span class="text-gray-600 line-through text-sm">Rp 100.000</span>
+                        <span class="text-green-400 font-bold text-2xl">Rp 10.000</span>
+                    </div>
+                    <a href="detail.html?id=zoom"
+                        class="mt-auto w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-xl transition-all flex justify-center items-center gap-2 group-hover:scale-[1.02] shadow-lg shadow-blue-600/25">
+                        <span class="group-hover:animate-pulse">BUY NOW</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product Card 6 (Scite) -->
+            <div data-category="ai"
+                class="relative group bg-brand-card rounded-2xl p-[1px] overflow-hidden hover:shadow-2xl hover:shadow-indigo-500/20 transition-all duration-300">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div
+                    class="relative bg-brand-dark rounded-2xl p-6 h-full flex flex-col border border-gray-800 group-hover:border-transparent transition-colors">
+                    <div
+                        class="absolute top-4 right-4 bg-green-500/10 text-green-400 text-[10px] font-bold px-2 py-1 rounded border border-green-500/20">
+                        FAST DELIVERY</div>
+                    <div
+                        class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-white p-2 flex items-center justify-center shadow-lg">
+                        <img src="https://placehold.co/500x500/0000FF/ffffff?text=Scite+AI"
+                            class="w-full h-full object-contain" alt="Scite">
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-white mb-1">Scite AI</h3>
+                    <p class="text-center text-gray-500 text-xs mb-6">Smart citations for research.</p>
+                    <div class="flex items-center justify-center gap-3 mb-6">
+                        <span class="text-gray-600 line-through text-sm">Rp 50.000</span>
+                        <span class="text-green-400 font-bold text-2xl">Rp 5.000</span>
+                    </div>
+                    <a href="detail.html?id=scite"
+                        class="mt-auto w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 rounded-xl transition-all flex justify-center items-center gap-2 group-hover:scale-[1.02] shadow-lg shadow-indigo-600/25">
+                        <span class="group-hover:animate-pulse">BUY NOW</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-24 bg-brand-card/30 border-y border-gray-800/50 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 opacity-20">
+            <div class="absolute top-10 right-10 w-64 h-64 bg-blue-600 rounded-full blur-[100px]"></div>
+        </div>
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Why Choose Us?</h2>
+                <p class="text-gray-400">We provide the best service for your digital needs.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="text-center">
+                    <div
+                        class="w-16 h-16 mx-auto bg-blue-500/10 rounded-full flex items-center justify-center text-blue-400 mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Instant Delivery</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Get your account details immediately after payment.
+                        No waiting time.</p>
+                </div>
+                <div class="text-center">
+                    <div
+                        class="w-16 h-16 mx-auto bg-purple-500/10 rounded-full flex items-center justify-center text-purple-400 mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Full Warranty</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">We guarantee the validity of your subscription for
+                        the entire duration.</p>
+                </div>
+                <div class="text-center">
+                    <div
+                        class="w-16 h-16 mx-auto bg-green-500/10 rounded-full flex items-center justify-center text-green-400 mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">24/7 Support</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Our human support team is ready to help you anytime
+                        via WhatsApp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="container mx-auto px-6 mb-24">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-white mb-4">Apa Kata Mereka?</h2>
+            <p class="text-gray-400">Testimoni asli dari pelanggan yang puas dengan layanan kami.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Review 1 -->
+            <div class="bg-brand-card p-8 rounded-2xl border border-gray-800 relative hover:border-brand-blue/50 transition duration-300">
+                <div class="text-yellow-400 flex gap-1 mb-4">
+                    <!-- 5 Stars -->
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <p class="text-gray-300 mb-6 italic">"Pelayanan sangat cepat! Baru bayar langsung dikirim akunnya. Recommended banget buat yang butuh Canva Pro murah."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold shadow-lg">L</div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm">Lalu Rio Sudarsoni</h4>
+                        <p class="text-gray-500 text-xs">Membeli Canva Pro</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="bg-brand-card p-8 rounded-2xl border border-gray-800 relative hover:border-green-500/50 transition duration-300">
+                <div class="text-yellow-400 flex gap-1 mb-4">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <p class="text-gray-300 mb-6 italic">"Awalnya ragu karena murah banget, ternyata beneran premium dan full garansi. Adminnya juga ramah pas ditanya-tanya."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-green-400 to-green-600 flex items-center justify-center text-white font-bold shadow-lg">A</div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm">Aji</h4>
+                        <p class="text-gray-500 text-xs">Membeli Spotify Premium</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="bg-brand-card p-8 rounded-2xl border border-gray-800 relative hover:border-purple-500/50 transition duration-300">
+                <div class="text-yellow-400 flex gap-1 mb-4">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <p class="text-gray-300 mb-6 italic">"Buat ngerjain tugas kuliah jadi gampang banget pake ChatGPT Plus dari sini. Harganya pas di kantong mahasiswa."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-400 to-purple-600 flex items-center justify-center text-white font-bold shadow-lg">N</div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm">Nurul</h4>
+                        <p class="text-gray-500 text-xs">Membeli ChatGPT Plus</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="testimoni.html" class="inline-block border border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                Lihat Semua Testimoni
+            </a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="container mx-auto px-6 py-24 max-w-3xl">
+        <h2 class="text-3xl font-bold text-white mb-10 text-center">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+            <div class="bg-brand-card rounded-xl p-6 border border-gray-800">
+                <h3 class="font-bold text-white mb-2">Is this legal?</h3>
+                <p class="text-gray-400 text-sm">Yes, we use family sharing or corporate licensing methods which are
+                    100% legal and safe.</p>
+            </div>
+            <div class="bg-brand-card rounded-xl p-6 border border-gray-800">
+                <h3 class="font-bold text-white mb-2">What if my account stops working?</h3>
+                <p class="text-gray-400 text-sm">Simply contact our support with your order ID, and we will fix it or
+                    replace it instantly under our Full Warranty policy.</p>
+            </div>
+            <div class="bg-brand-card rounded-xl p-6 border border-gray-800">
+                <h3 class="font-bold text-white mb-2">How do I receive the product?</h3>
+                <p class="text-gray-400 text-sm">The credentials or activation link will be sent to your WhatsApp or
+                    Email immediately after payment confirmation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Support Section -->
+    <section id="contact" class="container mx-auto px-6 py-24">
+        <div class="bg-gradient-to-r from-brand-blue/20 to-brand-purple/20 rounded-3xl p-10 md:p-16 text-center border border-white/10 relative overflow-hidden">
+            <!-- Decorative Blur -->
+            <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-brand-blue/30 rounded-full blur-[100px]"></div>
+            </div>
+
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Need Help? We're Here!</h2>
+            <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+                If you have any issues with your subscription or need guidance, our support team is available 24/7 to assist you.
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="https://wa.me/089512105205" target="_blank" class="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 px-8 rounded-xl transition flex items-center justify-center gap-2 shadow-lg shadow-green-900/20">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    Chat via WhatsApp
+                </a>
+                <a href="mailto:support@premiumstore.com" class="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-8 rounded-xl transition flex items-center justify-center gap-2 border border-white/10">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    Email Support
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Transaction Feed (Widget) -->
+    <div id="live-notification" class="fixed bottom-24 left-6 z-40 hidden lg:flex flex-col gap-3 pointer-events-none transition-opacity duration-500 opacity-0">
+        <div
+            class="bg-brand-card/90 backdrop-blur border border-gray-700 p-3 rounded-lg shadow-xl flex items-center gap-3">
+            <div class="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center text-green-400 text-xs">✓
+            </div>
+            <div>
+                <p id="notif-text" class="text-xs text-white font-bold">Seseorang baru saja membeli Canva Pro</p>
+                <p class="text-[10px] text-gray-400">Baru saja</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Button (Floating Bottom Left) -->
+    <div class="fixed bottom-6 left-6 z-50">
+        <div class="relative">
+            <!-- Menu Options -->
+            <div id="settingsMenu"
+                class="absolute bottom-full left-0 mb-4 w-48 bg-brand-card border border-gray-700 rounded-xl shadow-2xl overflow-hidden hidden transition-all transform origin-bottom-left">
+                <div class="p-2 space-y-1">
+                    <p class="text-xs text-gray-400 px-2 py-1 font-bold uppercase tracking-wider">Pilih Efek:</p>
+                    <button onclick="changeEffect('❄')"
+                        class="w-full text-left px-3 py-2 text-sm text-white hover:bg-white/10 rounded-lg flex items-center gap-3 transition">
+                        <span>❄</span> Salju
+                    </button>
+                    <button onclick="changeEffect('🌸')"
+                        class="w-full text-left px-3 py-2 text-sm text-white hover:bg-white/10 rounded-lg flex items-center gap-3 transition">
+                        <span>🌸</span> Sakura
+                    </button>
+                    <button onclick="changeEffect('🍂')"
+                        class="w-full text-left px-3 py-2 text-sm text-white hover:bg-white/10 rounded-lg flex items-center gap-3 transition">
+                        <span>🍂</span> Daun
+                    </button>
+                    <div class="h-px bg-gray-700 my-1"></div>
+                    <button onclick="changeEffect('')"
+                        class="w-full text-left px-3 py-2 text-sm text-red-400 hover:bg-red-500/10 rounded-lg flex items-center gap-3 transition">
+                        <span>🚫</span> Matikan
+                    </button>
+                </div>
+            </div>
+
+            <!-- Button Gear -->
+            <button onclick="toggleSettings()"
+                class="bg-gray-800/80 backdrop-blur hover:bg-gray-700 text-white p-3 rounded-full shadow-lg border border-gray-600 transition-all transform hover:rotate-90">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                    </path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Sticky Footer / WhatsApp -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/" target="_blank"
+            class="group flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white p-4 rounded-full shadow-lg shadow-green-900/20 transition-all transform hover:scale-110">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+            </svg>
+            <span class="font-bold hidden group-hover:block transition-all">Chat Support</span>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 py-12 bg-[#0b1120]">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-gray-500 text-sm">
+                &copy; 2024 PremiumStore. All rights reserved.
+            </div>
+            <div class="flex gap-4">
+                <!-- Payment Icons (Mockup) -->
+                <div class="h-8 bg-white/10 rounded px-2 flex items-center text-xs text-gray-400">QRIS</div>
+                <div class="h-8 bg-white/10 rounded px-2 flex items-center text-xs text-gray-400">BCA</div>
+                <div class="h-8 bg-white/10 rounded px-2 flex items-center text-xs text-gray-400">E-Wallet</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fitur Pencarian Produk Real-time
+        document.getElementById('searchInput').addEventListener('keyup', function () {
+            const filter = this.value.toLowerCase().trim(); // Tambahkan trim() agar spasi tidak mengganggu
+            const grid = document.getElementById('productGrid');
+            const cards = grid.children; // Mengambil semua elemen anak langsung (kartu produk)
+
+            for (let i = 0; i < cards.length; i++) {
+                const card = cards[i];
+                // Cari elemen h3 (judul produk) di dalam kartu
+                const titleElement = card.querySelector('h3');
+
+                if (titleElement) {
+                    const title = titleElement.innerText.toLowerCase();
+                    // Jika judul mengandung kata kunci, tampilkan. Jika tidak, sembunyikan.
+                    if (title.includes(filter)) {
+                        card.style.display = "";
+                    } else {
+                        card.style.display = "none";
+                    }
+                }
+            }
+        });
+
+        // Fitur Filter Kategori
+        function filterCategory(category, btnElement) {
+            const grid = document.getElementById('productGrid');
+            const cards = grid.children;
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // 1. Reset Style Semua Tombol
+            buttons.forEach(btn => {
+                btn.className = "filter-btn px-5 py-2 rounded-full border border-gray-700 text-gray-400 text-sm font-semibold transition hover:border-brand-blue hover:text-white hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]";
+            });
+
+            // 2. Aktifkan Tombol yang Diklik
+            btnElement.className = "filter-btn px-5 py-2 rounded-full border border-brand-blue bg-brand-blue text-white text-sm font-semibold transition shadow-[0_0_15px_rgba(59,130,246,0.5)]";
+
+            // 3. Filter Kartu Produk
+            for (let i = 0; i < cards.length; i++) {
+                const card = cards[i];
+                const cardCategory = card.getAttribute('data-category');
+
+                if (category === 'all' || cardCategory === category) {
+                    card.style.display = ""; // Tampilkan
+                } else {
+                    card.style.display = "none"; // Sembunyikan
+                }
+            }
+        }
+
+        // --- LOGIKA PENGATURAN EFEK ---
+        let currentEffect = '🌸'; // Default (Sakura)
+
+        function toggleSettings() {
+            document.getElementById('settingsMenu').classList.toggle('hidden');
+        }
+
+        function changeEffect(icon) {
+            currentEffect = icon;
+            document.getElementById('settingsMenu').classList.add('hidden'); // Tutup menu setelah pilih
+        }
+
+        // Efek Guguran (Salju / Bunga / Daun)
+        function startSnow() {
+            setInterval(() => {
+                if (!currentEffect) return; // Jika efek dimatikan (kosong), jangan buat elemen
+
+                const snowflake = document.createElement('div');
+                snowflake.classList.add('snowflake');
+                snowflake.innerText = currentEffect;
+
+                // Posisi dan properti acak
+                snowflake.style.left = Math.random() * 100 + 'vw';
+                const duration = Math.random() * 3 + 3; // Durasi antara 3 - 6 detik
+                snowflake.style.animationDuration = duration + 's';
+                snowflake.style.opacity = Math.random() * 0.5 + 0.3;
+                snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+
+                document.body.appendChild(snowflake);
+
+                // Hapus elemen setelah animasi selesai agar tidak memberatkan browser
+                setTimeout(() => snowflake.remove(), duration * 1000);
+            }, 200); // Muncul setiap 200ms
+        }
+        startSnow();
+
+        // Animasi Muncul Satu per Satu (Staggered Animation)
+        const grid = document.getElementById('productGrid');
+        // Siapkan suara Pop (Gunakan link CDN atau file lokal 'audio/pop.mp3')
+        const popSound = new Audio('https://cdn.pixabay.com/audio/2022/03/15/audio_c8c8a73467.mp3');
+        popSound.volume = 0.2; // Volume kecil agar halus (20%)
+
+        if (grid) {
+            const cards = grid.children;
+            for (let i = 0; i < cards.length; i++) {
+                cards[i].classList.add('card-animate');
+                cards[i].style.animationDelay = (i * 0.15) + "s"; // Delay 0.15 detik per kartu
+
+                // Mainkan suara pop sesuai delay munculnya kartu
+                setTimeout(() => {
+                    popSound.cloneNode().play().catch(() => { }); // .catch() untuk mencegah error jika autoplay diblokir browser
+                }, i * 150); // 150ms = 0.15s
+            }
+        }
+
+        // --- LIVE TRANSACTION FEED (Notifikasi Pembelian Otomatis) ---
+        const transactions = [
+            { name: "Budi", product: "Spotify Premium" },
+            { name: "Siti", product: "Zoom Pro" },
+            { name: "Andi", product: "Canva Pro" },
+            { name: "Dewi", product: "ChatGPT Plus" },
+            { name: "Rizky", product: "CapCut Pro" },
+            { name: "Nurul", product: "Scite AI" },
+            { name: "Eko", product: "Netflix Premium" },
+            { name: "Fajar", product: "Youtube Premium" },
+            { name: "Lestari", product: "Disney+ Hotstar" },
+            { name: "Bayu", product: "NordVPN" }
+        ];
+
+        function showNotification() {
+            const notif = document.getElementById('live-notification');
+            const notifText = document.getElementById('notif-text');
+            
+            if (!notif || !notifText) return;
+
+            // Pilih data acak
+            const randomData = transactions[Math.floor(Math.random() * transactions.length)];
+            
+            // Update teks
+            notifText.innerText = `${randomData.name} membeli ${randomData.product}`;
+
+            // Tampilkan (Fade In)
+            notif.classList.remove('opacity-0');
+            notif.classList.add('opacity-100');
+
+            // Sembunyikan setelah 4 detik (Fade Out)
+            setTimeout(() => {
+                notif.classList.remove('opacity-100');
+                notif.classList.add('opacity-0');
+            }, 4000);
+        }
+
+        // Jalankan loop notifikasi
+        setTimeout(() => {
+            showNotification(); // Muncul pertama kali
+            setInterval(showNotification, 7000); // Ulangi setiap 7 detik
+        }, 2000);
+    </script>
+</body>
+
+</html>
